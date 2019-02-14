@@ -8,7 +8,7 @@ import {of} from 'rxjs';
 import {Weather} from '../shared/weather';
 import {WeatherCardComponent} from '../weather-card/weather-card.component';
 
-fdescribe('WeatherListComponent', () => {
+describe('WeatherListComponent', () => {
   let component: WeatherListComponent;
   let weatherService: WeatherService;
   let fixture: ComponentFixture<WeatherListComponent>;
@@ -36,19 +36,19 @@ fdescribe('WeatherListComponent', () => {
   });
 
   it('should get forecast #getForecastForWeather()', () => {
-      const response: Forecast[] = [{
+      const forecastsMock: Forecast[] = [{
         temp: 4,
         date: new Date(),
         weather: 'clear'
       }];
 
       const weather = {id: 5} as Weather;
-      spyOn(weatherService, 'getForecastForWeather').and.returnValue(of(response));
+      spyOn(weatherService, 'getForecastForWeather').and.returnValue(of(forecastsMock));
 
       component.getForecastForWeather(weather);
 
       fixture.detectChanges();
 
-      expect(weather.forecast).toEqual(response);
+      expect(weather.forecast).toEqual(forecastsMock);
   });
 });
