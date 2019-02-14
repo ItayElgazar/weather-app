@@ -38,7 +38,7 @@ describe('WeatherListComponent', () => {
   it('should get forecast #getForecastForWeather()', () => {
       const forecastsMock: Forecast[] = [{
         temp: 4,
-        date: new Date(),
+        date:  '2019-02-14 18:00:00',
         weather: 'clear'
       }];
 

@@ -1,0 +1,18 @@
+{
+  "list": [{
+    "id": 1,
+    "name": "Amsterdam",
+    "wind": {
+      "speed": 3
+    },
+    "main": {
+      "temp": 3,
+      "temp_min": 3,
+      "temp_max": 3
+    },
+    "weather": [{
+      "main": "clear"
+    }],
+    "dt": 1550158420768
+  }]
+}

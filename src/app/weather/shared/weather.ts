@@ -8,7 +8,7 @@ export class Weather {
   tempAverage: number;
   weatherStatus: string;
   currentTime: number;
-  forecast: Forecast[];
+  forecast?: Forecast[];
   constructor(weather: Partial<Weather>) {
     Object.assign(this, weather);
 

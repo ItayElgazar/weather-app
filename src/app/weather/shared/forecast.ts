@@ -1,5 +1,5 @@
 export class Forecast {
   temp: number;
-  date: Date;
+  date: string;
   weather: string;
 }
