@@ -23,7 +23,22 @@ body {
 
 .flex {
   display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
   &__space-between {
     justify-content: space-between;
   }
+  &__center-items {
+    align-items: center;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+.margin {
+  margin: 50px auto;
 }

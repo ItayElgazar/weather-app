@@ -1,0 +1,18 @@
+<section>
+  <div class="weathers-list flex" *ngIf="weatherList$ | async; else loadingOrError">
+    <app-weather-card *ngFor="let weather of weatherList$ | async"
+      (forecastForWeather)="getForecastForWeather($event)"
+      [weather]="weather"></app-weather-card>
+  </div>
+
+  <ng-template #loadingOrError>
+    <div class="margin text-center" *ngIf="errorLoading$ | async; else loading">
+      <img src="../../../assets/stromy.png" width="200" height="200">
+      <h3>No weather data available at the moment. Please try again later.</h3>
+    </div>
+    <ng-template #loading>
+      Loading...
+    </ng-template>
+  </ng-template>
+
+</section>

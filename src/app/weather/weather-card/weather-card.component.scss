@@ -1,0 +1,44 @@
+.weather {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #fff;
+
+  &__city {
+    font-size: 28px;
+    padding-top: 15px;
+    margin: 0;
+  }
+
+  &__weather-status {
+    font-size: 12px;
+    margin: 0;
+    color: #eee;
+    text-transform: uppercase;
+  }
+
+  &__weather-temp {
+    padding: 65px 0 0 15px;
+    font-size: 58px;
+  }
+
+  &__weather-image {
+    width: 325px;
+    height: 400px;
+    border-radius: 5px;
+  }
+
+  &__forecast {
+    padding: 75px 25px 25px 25px;
+    p {
+      color: #000;
+      margin: 0;
+    }
+  }
+
+  .day {
+    background: url('../../../assets/day.png');
+  }
+  .night {
+    background: url('../../../assets/night.png');
+  }
+}

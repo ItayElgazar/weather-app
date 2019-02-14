@@ -1,0 +1,27 @@
+<div class="card weather" (click)="getForecast()">
+  <div class="weather__weather-image day" [ngClass]="{'night': !isDay()}">
+    <h4 class="weather__city">{{weather.name}}</h4>
+    <p class="weather__weather-status">{{weather.weatherStatus}}</p>
+    <p class="weather__weather-status">AVERAGE TEMP: {{weather.tempAverage}}°</p>
+    <p class="weather__weather-status">WIND: {{weather.wind}} M/S</p>
+    <div class="weather__weather-temp">
+      {{weather.temp}}°
+    </div>
+
+
+    <div class="flex weather__forecast">
+      <div  *ngFor="let forecast of weather.forecast;">
+        <p>{{forecast.temp}} °</p>
+        <img src="../../../assets/{{forecast.weather}}.png" height="40" width="40"/>
+        <p>{{forecast.date | date: 'HH:mm'}}</p>
+      </div>
+    </div>
+
+    <!-- When error -->
+    <ng-container *ngIf="weather.forecast && weather.forecast.length === 0">
+      <h4>Forecast not available</h4>
+    </ng-container>
+  </div>
+
+</div>
+

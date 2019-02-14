@@ -16,10 +16,26 @@ describe('WeatherCardComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(WeatherCardComponent);
     component = fixture.componentInstance;
+    component.weather = {
+      id: 1,
+      name: 'Amsterdam',
+      wind: 3,
+      temp: 5.6,
+      tempAverage: 4,
+      weatherStatus: 'clear',
+      currentTime: 5,
+      forecast: []
+    };
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should emit $forecastForWeather', () => {
+    spyOn(component.forecastForWeather, 'emit');
+    component.getForecast();
+    expect(component.forecastForWeather.emit).toHaveBeenCalledWith(component.weather);
+  });
+
+  it('#isDay() should return boolean', () => {
+    expect(component.isDay().constructor).toBe(Boolean);
   });
 });
