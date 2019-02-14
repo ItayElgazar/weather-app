@@ -41,4 +41,8 @@
   .night {
     background: url('../../../assets/night.png');
   }
+
+  &:hover {
+    box-shadow: 0 5px 8px black;
+  }
 }
